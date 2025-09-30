@@ -1,7 +1,15 @@
-import React from "react";
 import Produto from "../components/Produto";
+import axios from "axios";
 
 const Home = () => {
+  const requisicaoAxios = async () => {
+    const { data } = await axios.get("http://localhost:3000/produto");
+
+    console.log(data);
+  };
+
+  requisicaoAxios();
+
   return (
     <section className="secao-produto">
       <div className="container">
